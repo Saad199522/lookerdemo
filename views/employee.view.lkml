@@ -87,4 +87,8 @@ view: employee {
     type: count
     drill_fields: []
   }
+  measure: average {
+    type: average
+    drill_fields: [rm_satisfaction, sal_satisfaction, aut_satisfaction, gb_satisfaction, js_satisfaction, ben_satisfaction]
+  }
 }
