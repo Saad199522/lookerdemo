@@ -92,8 +92,4 @@ view: employee {
     sql: ${satisfaction} ;;
     drill_fields: []
   }
-  measure: average_dist {
-    type: average_distinct
-    sql: ${satisfaction} ;;
-  }
 }
