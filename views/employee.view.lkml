@@ -89,6 +89,7 @@ view: employee {
   }
   measure: average {
     type: average
+    sql: ${satisfaction} ;;
     drill_fields: []
   }
 }
