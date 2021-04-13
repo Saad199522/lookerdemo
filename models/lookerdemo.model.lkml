@@ -11,3 +11,4 @@ datagroup: lookerdemo_default_datagroup {
 persist_with: lookerdemo_default_datagroup
 
 explore: employee {}
+explore: saas {}

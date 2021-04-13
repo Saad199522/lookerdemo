@@ -1,76 +1,95 @@
 view: saas {
-  derived_table: {
-    explore_source: employee {
-      column: empId {
-        field: employee.empId
-      }
-    }
-  }
-  # # You can specify the table name if it's different from the view name:
-  # sql_table_name: my_schema_name.tester ;;
-  #
-  # # Define your dimensions and measures here, like this:
-  # dimension: user_id {
-  #   description: "Unique ID for each user that has ordered"
-  #   type: number
-  #   sql: ${TABLE}.user_id ;;
-  # }
-  #
-  # dimension: lifetime_orders {
-  #   description: "The total number of orders for each user"
-  #   type: number
-  #   sql: ${TABLE}.lifetime_orders ;;
-  # }
-  #
-  # dimension_group: most_recent_purchase {
-  #   description: "The date when each user last ordered"
-  #   type: time
-  #   timeframes: [date, week, month, year]
-  #   sql: ${TABLE}.most_recent_purchase_at ;;
-  # }
-  #
-  # measure: total_lifetime_orders {
-  #   description: "Use this for counting lifetime orders across many users"
-  #   type: sum
-  #   sql: ${lifetime_orders} ;;
-  # }
-}
+  sql_table_name: `testdata.employee`
+    ;;
 
-# view: saas {
-#   # Or, you could make this view a derived table, like this:
-#   derived_table: {
-#     sql: SELECT
-#         user_id as user_id
-#         , COUNT(*) as lifetime_orders
-#         , MAX(orders.created_at) as most_recent_purchase_at
-#       FROM orders
-#       GROUP BY user_id
-#       ;;
-#   }
-#
-#   # Define your dimensions and measures here, like this:
-#   dimension: user_id {
-#     description: "Unique ID for each user that has ordered"
-#     type: number
-#     sql: ${TABLE}.user_id ;;
-#   }
-#
-#   dimension: lifetime_orders {
-#     description: "The total number of orders for each user"
-#     type: number
-#     sql: ${TABLE}.lifetime_orders ;;
-#   }
-#
-#   dimension_group: most_recent_purchase {
-#     description: "The date when each user last ordered"
-#     type: time
-#     timeframes: [date, week, month, year]
-#     sql: ${TABLE}.most_recent_purchase_at ;;
-#   }
-#
-#   measure: total_lifetime_orders {
-#     description: "Use this for counting lifetime orders across many users"
-#     type: sum
-#     sql: ${lifetime_orders} ;;
-#   }
-# }
+  dimension: Sales_Conversion {
+    type: number
+    sql: ${TABLE}.absc ;;
+  }
+
+  dimension: Engineering_Construction {
+    type: number
+    sql: ${TABLE}.aut_Satisfaction ;;
+  }
+
+  dimension: Tourism {
+    type: number
+    sql: ${TABLE}.ben_Satisfaction ;;
+  }
+
+  dimension: feature {
+    type: string
+    sql: ${TABLE}.Department ;;
+  }
+
+  dimension: user_id {
+    type: number
+    sql: ${TABLE}.empId ;;
+  }
+
+  dimension: Other {
+    type: number
+    sql: ${TABLE}.gb_Satisfaction ;;
+  }
+
+  dimension: technology {
+    type: number
+    sql: ${TABLE}.js_Satisfaction ;;
+  }
+
+  dimension: location {
+    primary_key: yes
+    type: string
+    sql: ${TABLE}.Location ;;
+  }
+
+  dimension: help_social1 {
+    type: string
+    sql: ${TABLE}.rem_non_rem1 ;;
+  }
+
+  dimension: help_social2 {
+    type: string
+    sql: ${TABLE}.rem_non_rem2 ;;
+  }
+
+  dimension: Healthcare {
+    type: number
+    sql: ${TABLE}.rm_Satisfaction ;;
+  }
+
+  dimension: Retail_ECommerce {
+    type: number
+    sql: ${TABLE}.sal_Satisfaction ;;
+  }
+
+  dimension: Usage {
+    type: number
+    sql: ${TABLE}.Satisfaction ;;
+  }
+
+  dimension: paid1 {
+    type: string
+    sql: ${TABLE}.sur_resp1 ;;
+  }
+
+  dimension: paid2 {
+    type: string
+    sql: ${TABLE}.sur_resp2 ;;
+  }
+
+  dimension: yoe {
+    type: number
+    sql: ${TABLE}.yoe ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+  measure: average {
+    type: average
+    sql: ${Usage} ;;
+    drill_fields: []
+  }
+}
