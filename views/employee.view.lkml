@@ -71,7 +71,7 @@ view: employee {
     sql: ${TABLE}.sal_Satisfaction ;;
   }
 
-  dimension: satisfaction {
+  dimension: overall_satisfaction {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.Satisfaction ;;
@@ -98,10 +98,36 @@ view: employee {
     type: count
     drill_fields: []
   }
-  measure: average {
+  measure: average_satisfaction {
     value_format_name: decimal_0
     type: average
-    sql: ${satisfaction} ;;
+    sql: ${overall_satisfaction} ;;
     drill_fields: []
   }
+  measure: satisfaction_top_ten {
+    type: percentile
+    percentile: 90
+    sql: ${overall_satisfaction} ;;
+  }
+  measure: maxiumum_satisfaction{
+    value_format_name: decimal_0
+    type: max
+    sql:  ${overall_satisfaction};;
+  }
+  measure: minimum_satisfaction {
+    value_format_name: decimal_0
+    type: min
+    sql: ${overall_satisfaction} ;;
+  }
+  measure: median_satisfaction {
+    value_format_name: decimal_0
+    type: median
+    sql: ${overall_satisfaction} ;;
+  }
+  measure: average_yoe {
+    value_format_name: decimal_0
+    type: median
+    sql: ${yoe} ;;
+  }
+
 }
