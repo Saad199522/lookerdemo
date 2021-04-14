@@ -2,26 +2,25 @@ view: employee {
   sql_table_name: `testdata.employee`
     ;;
 
-  dimension: absc {
+  dimension: abscence_rate{
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.absc ;;
   }
 
-  dimension: aut_satisfaction {
+  dimension: autonomy_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.aut_Satisfaction;;
   }
 
-  dimension: ben_satisfaction {
+  dimension: benefits_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.ben_Satisfaction ;;
   }
 
   dimension: department {
-    value_format_name: decimal_0
     type: string
     sql: ${TABLE}.Department ;;
   }
@@ -32,13 +31,13 @@ view: employee {
     sql: ${TABLE}.empId ;;
   }
 
-  dimension: gb_satisfaction {
+  dimension: growth_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.gb_Satisfaction ;;
   }
 
-  dimension: js_satisfaction {
+  dimension: jobsat_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.js_Satisfaction ;;
@@ -50,23 +49,23 @@ view: employee {
     sql: ${TABLE}.Location ;;
   }
 
-  dimension: rem_non_rem1 {
+  dimension: remote1 {
     type: string
     sql: ${TABLE}.rem_non_rem1 ;;
   }
 
-  dimension: rem_non_rem2 {
+  dimension: remote2 {
     type: string
     sql: ${TABLE}.rem_non_rem2 ;;
   }
 
-  dimension: rm_satisfaction {
+  dimension: recognition_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.rm_Satisfaction ;;
   }
 
-  dimension: sal_satisfaction {
+  dimension: salary_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.sal_Satisfaction ;;
@@ -78,12 +77,12 @@ view: employee {
     sql: ${TABLE}.Satisfaction ;;
   }
 
-  dimension: sur_resp1 {
+  dimension: survey_response1 {
     type: string
     sql: ${TABLE}.sur_resp1 ;;
   }
 
-  dimension: sur_resp2 {
+  dimension: survey_response2 {
     type: string
     sql: ${TABLE}.sur_resp2 ;;
   }
