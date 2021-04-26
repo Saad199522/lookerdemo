@@ -2,37 +2,43 @@ view: saas {
   sql_table_name: `testdata.employee`
     ;;
 
-  dimension: Sales_Conversion {
+  dimension: Sentiment{
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.absc ;;
   }
 
-  dimension: Engineering_Construction {
+  dimension: tech_score {
+    value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.aut_Satisfaction ;;
+    sql: ${TABLE}.aut_Satisfaction;;
   }
 
-  dimension: Tourism {
+  dimension: healthcare_score {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.ben_Satisfaction ;;
   }
 
-  dimension: feature {
+  dimension: industry {
     type: string
     sql: ${TABLE}.Department ;;
   }
 
-  dimension: user_id {
+  dimension: uid {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.empId ;;
   }
 
-  dimension: Other {
+  dimension: engineering_score {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.gb_Satisfaction ;;
   }
 
-  dimension: technology {
+  dimension: retail_score {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.js_Satisfaction ;;
   }
@@ -43,53 +49,84 @@ view: saas {
     sql: ${TABLE}.Location ;;
   }
 
-  dimension: help_social1 {
+  dimension: help_request {
     type: string
     sql: ${TABLE}.rem_non_rem1 ;;
   }
 
-  dimension: help_social2 {
+  dimension: mentions {
     type: string
     sql: ${TABLE}.rem_non_rem2 ;;
   }
 
-  dimension: Healthcare {
+  dimension: tourism_score {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.rm_Satisfaction ;;
   }
 
-  dimension: Retail_ECommerce {
+  dimension: other_score {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.sal_Satisfaction ;;
   }
 
-  dimension: Usage {
+  dimension: overall_score {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.Satisfaction ;;
   }
 
-  dimension: paid1 {
+  dimension: free {
     type: string
     sql: ${TABLE}.sur_resp1 ;;
   }
 
-  dimension: paid2 {
+  dimension: paid {
     type: string
     sql: ${TABLE}.sur_resp2 ;;
   }
 
-  dimension: yoe {
+  dimension: sentiment {
+    value_format_name: decimal_0
     type: number
     sql: ${TABLE}.yoe ;;
   }
 
   measure: count {
+    value_format_name: decimal_0
     type: count
     drill_fields: []
   }
-  measure: average {
+  measure: average_score {
+    value_format_name: decimal_0
     type: average
-    sql: ${Usage} ;;
+    sql: ${overall_score} ;;
     drill_fields: []
+  }
+  measure: score_top_ten {
+    type: percentile
+    percentile: 90
+    sql: ${overall_score} ;;
+  }
+  measure: maxiumum_satisfaction{
+    value_format_name: decimal_0
+    type: max
+    sql:  ${overall_score};;
+  }
+  measure: minimum_satisfaction {
+    value_format_name: decimal_0
+    type: min
+    sql: ${overall_score} ;;
+  }
+  measure: median_satisfaction {
+    value_format_name: decimal_0
+    type: median
+    sql: ${overall_score} ;;
+  }
+  measure: average_sentiment {
+    value_format_name: decimal_0
+    type: median
+    sql: ${sentiment} ;;
   }
 }
