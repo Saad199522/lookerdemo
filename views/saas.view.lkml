@@ -2,7 +2,7 @@ view: saas {
   sql_table_name: `testdata.employee`
     ;;
 
-  dimension: Sentiment{
+  dimension: tweet_Sentiment{
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.absc ;;
