@@ -11,13 +11,13 @@ view: saas {
   dimension: integrations_score {
     value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.aut_Satisfaction;;
+    sql: 0.75*${TABLE}.aut_Satisfaction;;
   }
 
   dimension: communities_score {
     value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.ben_Satisfaction ;;
+    sql: 0.75*${TABLE}.ben_Satisfaction ;;
   }
 
   dimension: industry {
@@ -34,13 +34,13 @@ view: saas {
   dimension: calls_score {
     value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.gb_Satisfaction ;;
+    sql: 0.75*${TABLE}.gb_Satisfaction ;;
   }
 
   dimension: bots_score {
     value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.js_Satisfaction ;;
+    sql: 0.75*${TABLE}.js_Satisfaction ;;
   }
 
   dimension: location {
@@ -62,19 +62,19 @@ view: saas {
   dimension: chat_score {
     value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.rm_Satisfaction ;;
+    sql: 0.75*${TABLE}.rm_Satisfaction ;;
   }
 
   dimension: other_score {
     value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.sal_Satisfaction ;;
+    sql: 0.75*${TABLE}.sal_Satisfaction ;;
   }
 
   dimension: overall_score {
     value_format_name: decimal_0
     type: number
-    sql: ${TABLE}.Satisfaction ;;
+    sql: 0.75*${TABLE}.Satisfaction ;;
   }
 
   dimension: free {
