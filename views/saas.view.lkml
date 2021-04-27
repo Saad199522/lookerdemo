@@ -8,13 +8,13 @@ view: saas {
     sql: ${TABLE}.absc ;;
   }
 
-  dimension: tech_score {
+  dimension: integrations_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.aut_Satisfaction;;
   }
 
-  dimension: healthcare_score {
+  dimension: communities_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.ben_Satisfaction ;;
@@ -31,13 +31,13 @@ view: saas {
     sql: ${TABLE}.empId ;;
   }
 
-  dimension: engineering_score {
+  dimension: calls_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.gb_Satisfaction ;;
   }
 
-  dimension: retail_score {
+  dimension: bots_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.js_Satisfaction ;;
@@ -59,7 +59,7 @@ view: saas {
     sql: ${TABLE}.rem_non_rem2 ;;
   }
 
-  dimension: tourism_score {
+  dimension: chat_score {
     value_format_name: decimal_0
     type: number
     sql: ${TABLE}.rm_Satisfaction ;;
