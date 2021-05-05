@@ -4,7 +4,7 @@ view: employee {
 
   dimension: abscence_rate{
     type: number
-    value_format: "0.##"
+    value_format: "0.###"
     sql: ${TABLE}.absc ;;
   }
 
