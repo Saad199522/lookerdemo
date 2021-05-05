@@ -3,8 +3,8 @@ view: employee {
     ;;
 
   dimension: abscence_rate{
-    value_format_name: decimal_0
     type: number
+    value_format: "0.##"
     sql: ${TABLE}.absc ;;
   }
 
