@@ -12,6 +12,8 @@ persist_with: looker_demo_default_datagroup
 
 explore: employee {}
 
+explore: saas {}
+
 explore: vca_auto {}
 
 explore: vca_auto_rolled {}
