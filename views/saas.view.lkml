@@ -22,7 +22,9 @@ view: saas {
 
   dimension: industry {
     type: string
-    sql: ${TABLE}.Department ;;
+    sql: REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(${TABLE}.Department, 'Sales','Technology'), 'Delivery', 'Healthcare')
+    , 'Engineering', 'Construction'), 'Operations', 'Retail'), 'Design', 'Tourism')
+    ) ;;
   }
 
   dimension: uid {
