@@ -1,4 +1,4 @@
-connection: "looker_demo"
+connection: "lookerdemo"
 
 # include all the views
 include: "/views/**/*.view"
